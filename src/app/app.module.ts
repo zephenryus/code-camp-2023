@@ -21,7 +21,9 @@ const appRoutes: Routes = [
     {'path': '', redirectTo: 'new-game', pathMatch: 'full'}
 ];
 
+
 @NgModule({
+
     declarations: [
         AppComponent,
         TextPoolComponent,
