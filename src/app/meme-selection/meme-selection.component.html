@@ -1,0 +1,12 @@
+<section class="meme-selection container">
+    <div class="input-group">
+        <input [(ngModel)]="searchTerm" class="form-control" type="text" placeholder="Meme search...">
+        <button (click)="searchMemes()" class="btn btn-primary">Search</button>
+    </div>
+
+    <div class="meme-results" *ngIf="memeResults.length > 0">
+        <div *ngFor="let memeResult of memeResults" class="mb-3">
+            <img [src]="memeResult.blank" width="200">
+        </div>
+    </div>
+</section>
