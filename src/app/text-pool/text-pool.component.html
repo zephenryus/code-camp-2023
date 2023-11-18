@@ -1,0 +1,13 @@
+<div>
+  <label for="textInput">Enter Text:</label>
+  <input type="text" id="textInput" [(ngModel)]="enteredText" (keydown.enter)="addToPool()" />
+  <button (click)="addToPool()">Add to Pool</button>
+</div>
+
+<div *ngIf="textPool.length > 0">
+  <h3>Text Pool:</h3>
+  <ul>
+    <li *ngFor="let text of textPool">{{ text }}</li>
+  </ul>
+  <button (click)="clearPool()">Clear Pool</button>
+</div>
