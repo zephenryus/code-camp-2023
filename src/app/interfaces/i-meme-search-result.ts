@@ -12,4 +12,5 @@ export interface IMemeSearchResult {
     source: string;
     keywords: string[];
     _self: string;
+    selected: boolean;
 }

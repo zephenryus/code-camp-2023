@@ -1,0 +1,28 @@
+.carousel-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+
+  .arrow-button {
+    font-size: 2em;
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .left {
+    left: 10px; /* Adjust the left position as needed */
+  }
+
+  .right {
+    right: 10px; /* Adjust the right position as needed */
+  }
+
+  .word-container {
+    font-size: 1.5em;
+  }
+}

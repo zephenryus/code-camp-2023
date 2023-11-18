@@ -23,4 +23,13 @@ export class MemeService {
             })
         );
     }
+
+    submitMemes(selectedMemes: any[]): Observable<any> {
+        const url = `http://13.57.16.4:8080/save-selected-memes`;
+
+        return this.http.post(url, {
+            playerId: 1,
+            memeIds: selectedMemes.filter(a => a.id)
+        });
+    }
 }

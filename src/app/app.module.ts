@@ -12,7 +12,11 @@ import { StartScreenComponent } from "./start-screen/start-screen.component";
 import { HomeScreenComponent } from "./home-screen/home-screen.component";
 import { NewGameComponent } from './new-game/new-game.component';
 import { JoinGameComponent } from './join-game/join-game.component';
+import { PhotoCarouselComponent } from './photo-carousel/photo-carousel.component';
+import { WordCarouselComponent } from './word-carousel/word-carousel.component';
+import { BottomWordCarouselComponent } from './bottom-word-carousel/bottom-word-carousel.component';
 import { MemeSelectionComponent } from './meme-selection/meme-selection.component';
+import {MainscreenComponent} from "./mainscreen/mainscreen.component";
 
 
 const appRoutes: Routes = [
@@ -21,7 +25,9 @@ const appRoutes: Routes = [
     {'path': '', redirectTo: 'new-game', pathMatch: 'full'}
 ];
 
+
 @NgModule({
+
     declarations: [
         AppComponent,
         TextPoolComponent,
@@ -31,7 +37,11 @@ const appRoutes: Routes = [
         HomeScreenComponent,
         NewGameComponent,
         JoinGameComponent,
+        PhotoCarouselComponent,
+        WordCarouselComponent,
+        BottomWordCarouselComponent,
         MemeSelectionComponent,
+        MainscreenComponent,
     ],
     imports: [
         BrowserModule,

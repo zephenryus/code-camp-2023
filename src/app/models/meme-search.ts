@@ -11,6 +11,7 @@ export class MemeSearch implements IMemeSearchResult{
     overlays: number;
     source: string;
     styles: string[];
+    selected: boolean;
 
     constructor(meme: IMemeSearchResult) {
         this._self = meme._self;
@@ -23,5 +24,7 @@ export class MemeSearch implements IMemeSearchResult{
         this.overlays = meme.overlays;
         this.source = meme.source;
         this.styles = meme.styles;
+
+        this.selected = false
     }
 }
