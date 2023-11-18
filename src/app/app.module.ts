@@ -18,12 +18,15 @@ import { BottomWordCarouselComponent } from './bottom-word-carousel/bottom-word-
 import { MemeSelectionComponent } from './meme-selection/meme-selection.component';
 import {MainscreenComponent} from "./mainscreen/mainscreen.component";
 import { JoinWaitComponent } from './join-wait/join-wait.component';
+import { TextEntryComponent } from './big-screen/text-entry/text-entry.component';
 
 
 const appRoutes: Routes = [
     {'path': 'new-game', component: NewGameComponent},
     {'path': 'join-game', component: JoinGameComponent},
-    {'path': 'main-screen-lobby', component: MainscreenComponent}
+    {'path': 'join-wait', component: JoinWaitComponent},
+    {'path': 'main-screen-lobby', component: MainscreenComponent},
+    {path: 'big-screen/text-entry', component: TextEntryComponent}
     // {'path': '', redirectTo: 'new-game', pathMatch: 'full'}
 ];
 
@@ -45,6 +48,7 @@ const appRoutes: Routes = [
         MemeSelectionComponent,
         MainscreenComponent,
         JoinWaitComponent,
+        TextEntryComponent,
     ],
     imports: [
         BrowserModule,

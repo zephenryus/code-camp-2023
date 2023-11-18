@@ -1,5 +1,6 @@
-// join-wait.component.ts
+import { HttpClient } from "@angular/common/http";
 import { Component } from '@angular/core';
+import { interval, switchMap } from "rxjs";
 
 @Component({
   selector: 'app-join-wait',
@@ -7,5 +8,23 @@ import { Component } from '@angular/core';
   styleUrls: ['./join-wait.component.scss']
 })
 export class JoinWaitComponent {
-  // Add any necessary properties or methods for your component logic
+  constructor(private http: HttpClient) {}
+
+  ngOnInit() {
+    interval(1000) // every 1000 milliseconds
+        .pipe(
+            switchMap(() => this.http.get('http://13.57.16.4:8080/game-ready-check'))
+        )
+        .subscribe(
+            (response: any) => {
+              console.log('Flag status:', response.flag);
+              if (response.flag) {
+                // Take action when the flag is set
+              }
+            },
+            error => {
+              console.error('Error:', error);
+            }
+        );
+  }
 }
