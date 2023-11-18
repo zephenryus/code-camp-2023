@@ -1,0 +1,21 @@
+<section class="meme-selection container">
+    <div class="input-group">
+        <input [(ngModel)]="searchTerm" class="form-control" type="text" placeholder="Meme search...">
+        <button (click)="searchMemes()" class="btn btn-primary">Search</button>
+    </div>
+
+    <div class="meme-container">
+        <div
+                *ngFor="let meme of memeResults"
+                class="meme-item"
+                [ngClass]="{ 'selected': meme.selected }"
+                (click)="selectMeme(meme)"
+        >
+            <img [src]="meme.blank" alt="{{ meme.name }}" />
+        </div>
+    </div>
+
+    <footer class="bg-body">
+        <button class="btn btn-primary" (click)="submitMemes()" [disabled]="isMemesSubmitted">Submit</button>
+    </footer>
+</section>
