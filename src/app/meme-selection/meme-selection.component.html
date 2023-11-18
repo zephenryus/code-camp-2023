@@ -4,9 +4,14 @@
         <button (click)="searchMemes()" class="btn btn-primary">Search</button>
     </div>
 
-    <div class="meme-results" *ngIf="memeResults.length > 0">
-        <div *ngFor="let memeResult of memeResults" class="mb-3">
-            <img [src]="memeResult.blank" width="200">
+    <div class="meme-container">
+        <div
+                *ngFor="let meme of memeResults"
+                class="meme-item"
+                [ngClass]="{ 'selected': meme.selected }"
+                (click)="selectMeme(meme)"
+        >
+            <img [src]="meme.blank" alt="{{ meme.name }}" width="300" />
         </div>
     </div>
 </section>

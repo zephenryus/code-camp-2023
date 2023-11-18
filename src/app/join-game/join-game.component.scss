@@ -1,0 +1,53 @@
+// meme-maker.component.scss
+
+#meme-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+#meme-img {
+  max-width: 100%;
+  max-height: 70vh;
+  border: 2px solid #333;
+  margin-bottom: 10px;
+}
+
+.text-container {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+
+  p {
+    margin: 0;
+  }
+}
+
+.arrow {
+  position: absolute;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.left-arrow {
+  left: 10px;
+}
+
+.right-arrow {
+  right: 10px;
+}
+
+.top-arrow {
+  top: 10px;
+}
+
+.middle-arrow {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.bottom-arrow {
+  bottom: 10px;
+}
