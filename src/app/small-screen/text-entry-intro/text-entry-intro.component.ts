@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from "@angular/router";
-import { interval, switchMap } from "rxjs";
+import { interval, Subscription, switchMap } from "rxjs";
 import { GameService } from "../../services/game.service";
 
 @Component({
@@ -9,17 +9,19 @@ import { GameService } from "../../services/game.service";
   styleUrls: ['./text-entry-intro.component.scss']
 })
 export class TextEntryIntroComponent {
+    private pollInterval!: Subscription;
   constructor(private gameService: GameService, private router: Router) {
   }
 
   ngOnInit() {
-    interval(2000) // every 2000 milliseconds (2 seconds)
+    this.pollInterval = interval(2000) // every 2000 milliseconds (2 seconds)
         .pipe(
             switchMap(() => this.gameService.getGamePhase())
         )
         .subscribe((response: any) => {
             console.log(response);
             if (response.phase >= 1) {
+                this.pollInterval.unsubscribe();
               this.router.navigate(['small-screen/text-pool']);
           }
         }, (error: any) => {
