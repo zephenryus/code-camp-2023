@@ -19,6 +19,8 @@ import { MemeSelectionComponent } from './meme-selection/meme-selection.componen
 import {MainscreenComponent} from "./mainscreen/mainscreen.component";
 import { JoinWaitComponent } from './join-wait/join-wait.component';
 import { TextEntryComponent } from './big-screen/text-entry/text-entry.component';
+import { TextEntryIntroComponent } from './small-screen/text-entry-intro/text-entry-intro.component';
+import { TextEntryTimerComponent } from './big-screen/text-entry-timer/text-entry-timer.component';
 
 
 const appRoutes: Routes = [
@@ -26,7 +28,11 @@ const appRoutes: Routes = [
     {'path': 'join-game', component: JoinGameComponent},
     {'path': 'join-wait', component: JoinWaitComponent},
     {'path': 'main-screen-lobby', component: MainscreenComponent},
-    {path: 'big-screen/text-entry', component: TextEntryComponent}
+    {path: 'big-screen/text-entry', component: TextEntryComponent},
+    {path: 'big-screen/text-entry-timer', component: TextEntryTimerComponent},
+    {path: 'small-screen/text-entry-intro', component: TextEntryIntroComponent},
+    {path: 'small-screen/text-pool', component: TextPoolComponent},
+    {path: 'small-screen/meme-selection', component: MemeSelectionComponent},
     // {'path': '', redirectTo: 'new-game', pathMatch: 'full'}
 ];
 
@@ -49,6 +55,8 @@ const appRoutes: Routes = [
         MainscreenComponent,
         JoinWaitComponent,
         TextEntryComponent,
+        TextEntryIntroComponent,
+        TextEntryTimerComponent,
     ],
     imports: [
         BrowserModule,

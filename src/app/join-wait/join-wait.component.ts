@@ -1,6 +1,8 @@
 import { HttpClient } from "@angular/common/http";
 import { Component } from '@angular/core';
+import { Router } from "@angular/router";
 import { interval, switchMap } from "rxjs";
+import { GameService } from "../services/game.service";
 
 @Component({
   selector: 'app-join-wait',
@@ -8,7 +10,7 @@ import { interval, switchMap } from "rxjs";
   styleUrls: ['./join-wait.component.scss']
 })
 export class JoinWaitComponent {
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private router: Router) {}
 
   ngOnInit() {
     interval(1000) // every 1000 milliseconds
@@ -18,8 +20,8 @@ export class JoinWaitComponent {
         .subscribe(
             (response: any) => {
               console.log('Flag status:', response.flag);
-              if (response.flag) {
-                // Take action when the flag is set
+              if (response) {
+                this.router.navigate(['/small-screen/text-entry-intro']);
               }
             },
             error => {

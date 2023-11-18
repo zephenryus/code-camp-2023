@@ -16,10 +16,19 @@ export class GameService {
 
   updateGamePhase(phase: number): Observable<any> {
       const url = 'http://13.57.16.4:8080/update-game-phase';
+      console.log(phase);
+
+      return this.http.post(url, {
+        gameId: localStorage.getItem('game_id'),
+        completedPhase: phase
+      });
+  }
+
+  getGamePhase(): Observable<any> {
+      const url = 'http://13.57.16.4:8080/get-game-phase';
       // Your HTTP request logic here
       return this.http.post(url, {
-        gameId: localStorage.getItem('gameId'),
-        completedPhase: phase
+          game_id: localStorage.getItem('game_id'),
       });
   }
 }

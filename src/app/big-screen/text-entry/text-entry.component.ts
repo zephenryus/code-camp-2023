@@ -1,5 +1,6 @@
 import { HttpClient } from "@angular/common/http";
 import { Component } from '@angular/core';
+import { Router } from "@angular/router";
 import { GameService } from "../../services/game.service";
 
 @Component({
@@ -10,7 +11,7 @@ import { GameService } from "../../services/game.service";
 export class TextEntryComponent {
   private audio = new Audio();
 
-  constructor(private http: HttpClient, private gameService: GameService) {
+  constructor(private router: Router, private gameService: GameService) {
   }
 
   ngAfterViewInit(): void {
@@ -23,7 +24,9 @@ export class TextEntryComponent {
       console.log('Audio finished playing');
 
       // Now, send the HTTP request
-      this.gameService.updateGamePhase(1);
+      this.gameService.updateGamePhase(1).subscribe((response: any) => {
+        this.router.navigate(['big-screen/text-entry-timer'])
+      });
     };
   }
 
