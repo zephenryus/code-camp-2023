@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TextsService } from "../services/texts.service";
 
 @Component({
   selector: 'app-text-pool',
@@ -8,6 +9,10 @@ import { Component } from '@angular/core';
 export class TextPoolComponent {
   enteredText = '';
   textPool: string[] = [];
+  isTextsSubmitted: boolean = false;
+
+  constructor(private textsService: TextsService) {
+  }
 
   addToPool() {
     if (this.enteredText.trim() !== '') {
@@ -18,5 +23,12 @@ export class TextPoolComponent {
 
   clearPool() {
     this.textPool = [];
+  }
+
+  submitTexts(): void {
+    this.isTextsSubmitted = true;
+    this.textsService.submitTexts(this.textPool).subscribe(() => {
+      // response
+    });
   }
 }

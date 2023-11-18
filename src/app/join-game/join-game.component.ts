@@ -8,6 +8,13 @@ import { Component, OnInit } from '@angular/core';
 export class JoinGameComponent implements OnInit {
 
   ngOnInit() {
+    fetch('http://13.57.16.4:8080/login')
+        .then(response => response.json())
+        .then(data => {
+          localStorage.setItem('hash', data.hash);
+        })
+        .catch(error => console.error('Error:', error));
+
     const loadingScreen = document.getElementById("loadingScreen") as HTMLElement;
     const loadingBar = document.getElementById("loadingBar") as HTMLElement;
 

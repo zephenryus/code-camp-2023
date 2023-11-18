@@ -28,8 +28,8 @@ export class MemeService {
         const url = `http://13.57.16.4:8080/save-selected-memes`;
 
         return this.http.post(url, {
-            playerId: 1,
-            memeIds: selectedMemes.filter(a => a.id)
+            playerId: localStorage.getItem('hash'),
+            memeIds: selectedMemes.map(a => a.id)
         });
     }
 }
