@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-new-game',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./new-game.component.scss']
 })
 export class NewGameComponent implements OnInit {
+  constructor(private router: Router) {
+  }
 
   ngOnInit() {
     const loadingScreen = document.getElementById("loadingScreen") as HTMLElement;
@@ -13,10 +16,12 @@ export class NewGameComponent implements OnInit {
 
     // Simulate a delay for demonstration purposes
     setTimeout(() => {
-      // Your logic to navigate to the next page goes here
-      // For Angular, use the router to navigate to the next page
-      // Example: this.router.navigate(['/next-page']);
+      this.redirectToNewComponent()
     }, 3000); // Delay duration in milliseconds, should match the duration of the loading animation
+  }
+
+  redirectToNewComponent() {
+    this.router.navigate(['main-screen-lobby/']);
   }
 
 }

@@ -22,7 +22,8 @@ import {MainscreenComponent} from "./mainscreen/mainscreen.component";
 const appRoutes: Routes = [
     {'path': 'new-game', component: NewGameComponent},
     {'path': 'join-game', component: JoinGameComponent},
-    {'path': '', redirectTo: 'new-game', pathMatch: 'full'}
+    {'path': 'main-screen-lobby', component: MainscreenComponent}
+    // {'path': '', redirectTo: 'new-game', pathMatch: 'full'}
 ];
 
 
