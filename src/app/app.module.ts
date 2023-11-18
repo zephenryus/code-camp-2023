@@ -17,6 +17,7 @@ import { WordCarouselComponent } from './word-carousel/word-carousel.component';
 import { BottomWordCarouselComponent } from './bottom-word-carousel/bottom-word-carousel.component';
 import { MemeSelectionComponent } from './meme-selection/meme-selection.component';
 import {MainscreenComponent} from "./mainscreen/mainscreen.component";
+import { JoinWaitComponent } from './join-wait/join-wait.component';
 
 
 const appRoutes: Routes = [
@@ -42,6 +43,7 @@ const appRoutes: Routes = [
         BottomWordCarouselComponent,
         MemeSelectionComponent,
         MainscreenComponent,
+        JoinWaitComponent,
     ],
     imports: [
         BrowserModule,
