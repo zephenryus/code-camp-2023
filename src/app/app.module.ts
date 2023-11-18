@@ -16,6 +16,7 @@ import { PhotoCarouselComponent } from './photo-carousel/photo-carousel.componen
 import { WordCarouselComponent } from './word-carousel/word-carousel.component';
 import { BottomWordCarouselComponent } from './bottom-word-carousel/bottom-word-carousel.component';
 import { MemeSelectionComponent } from './meme-selection/meme-selection.component';
+import {MainscreenComponent} from "./mainscreen/mainscreen.component";
 
 
 const appRoutes: Routes = [
@@ -40,6 +41,7 @@ const appRoutes: Routes = [
         WordCarouselComponent,
         BottomWordCarouselComponent,
         MemeSelectionComponent,
+        MainscreenComponent,
     ],
     imports: [
         BrowserModule,
