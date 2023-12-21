@@ -1,0 +1,43 @@
+$deepBlue: #0b0048;
+$lighterBlue: #003366; // Adjust this color as needed
+
+body {
+  margin: 0;
+  overflow: hidden; // Hide scrollbars
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.loading-screen {
+  margin: 0;
+  background-size: 110% ;
+  background-position: 50% 50%;
+  height: 100vh;
+  display: flex;
+  align-items: flex-end; // Align the loading bar to the bottom
+  justify-content: center;
+  background-image: url('../../assets/Asset 1loading.png'); // Replace with the path to your temporary PNG image
+  position: relative; // Set the position to relative
+}
+
+.loading-bar {
+  width: 0;
+  height: 15px;
+  background-color: $lighterBlue;
+  animation: loadingAnimation 3s ease-out forwards; // Keep the last frame of the animation
+  position: absolute; // Set the position to absolute
+  bottom: 1.5in; // Adjust the distance from the bottom
+}
+
+@keyframes loadingAnimation {
+  0% {
+    width: 0;
+  }
+  90% {
+    width: 90%;
+  }
+  100% {
+    width: 100%; // Slightly overshoot to give the appearance of speeding up at the end
+  }
+}

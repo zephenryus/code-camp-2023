@@ -1,0 +1,52 @@
+// Assume your PNG images are in the assets folder
+
+.home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #0b0048;
+  color: black;
+}
+
+.logo-container {
+  margin-bottom: 40px; // Increase margin for the logo container
+  text-align: center;
+}
+
+.logo {
+  width: 550px; // Increase logo width
+  margin: 0 auto;
+}
+
+.button-container {
+  display: flex;
+  gap: 40px; // Increase gap between buttons
+}
+
+.join-button, .new-game-button {
+  position: relative;
+  padding: 0; // Remove padding to make room for background image
+  width: 350px; // Increase button width
+  height: 117px; // Increase button height
+  cursor: pointer;
+  border-radius: 10px; // Increase border radius
+  transition: background-color 0.3s;
+  text-decoration: none;
+
+  background-size: cover; // Ensure the entire button is covered by the background image
+
+  &:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); // Increase box shadow on hover
+  }
+}
+
+.join-button {
+  background-image: url('../../assets/Asset-3join.png');
+  background-position: 10% center; // Adjust the left position (e.g., 10%)
+}
+
+.new-game-button {
+  background-image: url('../../assets/Asset-2new.png');
+}

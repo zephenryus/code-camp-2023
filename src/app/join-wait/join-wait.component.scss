@@ -1,0 +1,33 @@
+// join-wait.component.scss
+$deepBlue: #0b0048;
+$lighterBlue: #003366; // Adjust this color as needed
+$white: #ffffff;
+
+.join-wait-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: $deepBlue;
+  color: $white;
+}
+
+.loading-text {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.loading-spinner {
+  border: 8px solid $lighterBlue;
+  border-top: 8px solid transparent;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1.5s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
