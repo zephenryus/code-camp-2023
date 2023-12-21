@@ -13,7 +13,7 @@ export class MemeService {
   constructor(private http: HttpClient) { }
 
     getStarterMemes(): Observable<MemeSearch[]> {
-        const url = `http://13.57.16.4:8080/starting-memes`;
+        const url = `/starting-memes`;
 
         return this.http.get<MemeSearch[]>(url).pipe(
             map((data: MemeSearch[]) => data.map(item => new MemeSearch(item))),
@@ -25,7 +25,7 @@ export class MemeService {
     }
 
     submitMemes(selectedMemes: any[]): Observable<any> {
-        const url = `http://13.57.16.4:8080/save-selected-memes`;
+        const url = `/save-selected-memes`;
 
         return this.http.post(url, {
             playerId: 1,

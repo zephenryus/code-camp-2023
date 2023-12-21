@@ -10,12 +10,12 @@ export class GameService {
   constructor(private http: HttpClient) { }
 
   joinLatestGame(): Observable<any> {
-    const url = 'http://13.57.16.4:8080/join-latest-game';
+    const url = '/join-latest-game';
     return this.http.get(url);
   }
 
   updateGamePhase(phase: number): Observable<any> {
-      const url = 'http://13.57.16.4:8080/update-game-phase';
+      const url = '/update-game-phase';
       console.log(phase);
 
       return this.http.post(url, {
@@ -25,7 +25,7 @@ export class GameService {
   }
 
   getGamePhase(): Observable<any> {
-      const url = 'http://13.57.16.4:8080/get-game-phase';
+      const url = '/get-game-phase';
       // Your HTTP request logic here
       return this.http.post(url, {
           game_id: localStorage.getItem('game_id'),

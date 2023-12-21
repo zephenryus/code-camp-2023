@@ -28,7 +28,7 @@ export class MemeSelectionComponent {
 
     searchMemes(): void {
         const query = encodeURIComponent(this.searchTerm);
-        const url = `http://13.57.16.4:8080/search-memes?query=${ query }`;
+        const url = `/search-memes?query=${ query }`;
         this.memeResults = [];
 
         this.http.get<MemeSearch[]>(url).subscribe(

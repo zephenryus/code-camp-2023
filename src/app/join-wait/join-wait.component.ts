@@ -15,7 +15,7 @@ export class JoinWaitComponent {
   ngOnInit() {
     interval(1000) // every 1000 milliseconds
         .pipe(
-            switchMap(() => this.http.get('http://13.57.16.4:8080/game-ready-check'))
+            switchMap(() => this.http.get('/game-ready-check'))
         )
         .subscribe(
             (response: any) => {

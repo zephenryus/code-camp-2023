@@ -24,7 +24,7 @@ export class MainscreenComponent {
   ngOnInit() {
     interval(1000) // every 1000 milliseconds
         .pipe(
-            switchMap(() => this.http.get('http://13.57.16.4:8080/total-players'))
+            switchMap(() => this.http.get('/total-players'))
         )
         .subscribe(
             (response: any) => {
@@ -40,7 +40,7 @@ export class MainscreenComponent {
   everybodysReady(): void {
     // You can add logic here for what should happen when everybody is ready
     console.log("Everybody's ready! Let the games begin!");
-      const url = 'http://13.57.16.4:8080/update-game-status';
+      const url = '/update-game-status';
       this.http.post(url, { gameId: localStorage.getItem('game_id') }).subscribe((response: any) => {
           this.router.navigate(['big-screen/text-entry']);
       });

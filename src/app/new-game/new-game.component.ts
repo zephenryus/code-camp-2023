@@ -28,7 +28,7 @@ export class NewGameComponent implements OnInit {
   }
 
   createGame(): void {
-    const url = 'http://13.57.16.4:8080/create-game';
+    const url = '/create-game';
 
     this.http.post(url, {}).subscribe(
         (response: any) => {
